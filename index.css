@@ -1,0 +1,51 @@
+simple-sort-table {
+
+}
+
+simple-sort-table table {
+	width: 100%;
+	border-spacing: 0px;
+}
+
+simple-sort-table th, simple-sort-table td {
+	padding: 8px;
+}
+
+simple-sort-table th {
+	cursor: pointer;
+	text-align: left;
+	position: relative;
+}
+
+simple-sort-table td {
+	border-top: 1px solid #ddd;
+}
+
+simple-sort-table .insort:before {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 11px;
+	width: 5px;
+	height: 12px;
+	background-color: #A8A8A8;
+}
+
+simple-sort-table .insort:after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 6px;
+	border: 7px solid transparent;
+}
+
+simple-sort-table .insort.asc:after {
+	border-bottom-color: #A8A8A8;
+	top: 1px;
+}
+
+simple-sort-table .insort.desc:after {
+	border-top-color: #A8A8A8;
+    top: 18px;
+}
