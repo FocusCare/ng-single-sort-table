@@ -9,14 +9,14 @@ angular single sort table
 
 ## html
 
-```
+```html
     div
         simple-sort-table(records="records" config="config" sortkey="id")
 ```
 
 ## ctrl.js
 
-```
+```js
     $scope.config = [{
         head: 'id',
         key: 'id'
