@@ -5,12 +5,13 @@ angular.module('simpleSortTable', [])
             scope: {
                 records: '=',
                 config: '=',
-                sortkey: '@'
+                sortkey: '@',
+                rowClick: '='
             },
             transclude: true,
             template: '<table class="sort-table">' +
                 '<thead><tr><th ng-repeat="c in config" ng-click="sort(c.key)" ng-class="{insort: c.key === sortkey, desc: desc === true, asc: desc !== true}">{{c.head}}</th></tr></thead>' +
-                '<tbody><tr ng-repeat="r in records"><td ng-repeat="c in config">{{r[c.key]}}</td></tr></tbody></table>',
+                '<tbody><tr ng-repeat="r in records" ng-click="rowClick(r)"><td ng-repeat="c in config">{{r[c.key]}}</td></tr><tr ng-show="records.length === 0"><td colspan="{{config.length}}">没有记录。</td></tr></tbody></table>',
             controller: function($scope) {
                 $scope.desc = true;
                 $scope.sort = function(key) {
